@@ -1,6 +1,6 @@
 import Meetup from '../models/Meetup';
 
-class MeetupOwnerController {
+class OrganizingController {
   async index(req, res) {
     const meetups = await Meetup.findAll({ where: { user_id: req.userId } });
 
@@ -8,4 +8,4 @@ class MeetupOwnerController {
   }
 }
 
-export default new MeetupOwnerController();
+export default new OrganizingController();
