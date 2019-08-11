@@ -25,9 +25,9 @@ module.exports = {
       },
       file_id: {
         type: Sequelize.INTEGER,
-        allowNull: true,
+        allowNull: false,
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
+        onDelete: 'CASCADE',
         references: {
           model: 'files',
           key: 'id',
@@ -37,14 +37,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
+        onDelete: 'CASCADE',
         references: {
           model: 'users',
           key: 'id',
         },
-      },
-      canceled_at: {
-        type: Sequelize.DATE,
       },
       created_at: {
         type: Sequelize.DATE,

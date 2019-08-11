@@ -21,7 +21,11 @@ class Database {
   }
 
   associate() {
-    models.map(model => model.associate(this.connection) && model.associate);
+    models.forEach(model => {
+      if (model.associate) {
+        model.associate(this.connection.models);
+      }
+    });
   }
 }
 
