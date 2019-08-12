@@ -4,7 +4,8 @@ import User from '../models/User';
 import Meetup from '../models/Meetup';
 import Subscription from '../models/Subscription';
 
-import Mail from '../../lib/Mail';
+import SubscriptionMail from '../jobs/SubscriptionMail';
+import Queue from '../../lib/Queue';
 
 class SubscriptionController {
   async index(req, res) {
@@ -71,16 +72,9 @@ class SubscriptionController {
       meetup_id: meetup.id,
     });
 
-    await Mail.sendMail({
-      to: `${meetup.User.name} <${meetup.User.email}>`,
-      subject: `[${meetup.title}] Nova inscrição`,
-      template: 'subscription',
-      context: {
-        organizer: meetup.User.name,
-        meetup: meetup.title,
-        user: user.name,
-        email: user.email,
-      },
+    await Queue.add(SubscriptionMail.key, {
+      user,
+      meetup,
     });
 
     return res.json(subscription);
