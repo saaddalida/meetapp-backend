@@ -1,6 +1,9 @@
 # Meetapp API
 
-A meetup scheduling app that allows users to create a meetup or subscribe to any event available.
+A meetup scheduling app that allows users to create a meetup or subscribe to any event available. This API was used in the following projects:
+
+- [MeetApp Web](https://github.com/saaddalida/meetapp-frontend)
+- [MeetApp Mobile](https://github.com/saaddalida/meetapp-mobile)
 
 ## Built With
 
