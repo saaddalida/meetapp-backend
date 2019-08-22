@@ -25,7 +25,7 @@ A meetup scheduling app that allows users to create a meetup or subscribe to any
 
 ## Authors
 
-- **Dalida Saad** - [Twitter](https://twitter.com/dalida_saad)
+- **Dalida Saad** - :wave: [Get in touch!](https://www.linkedin.com/in/dalida-saad/)
 
 ## License
 
